@@ -1,0 +1,42 @@
+#Ejercicio 1
+#python --version
+
+# Ejercicio 2
+print(3+4)
+print(4-3)
+print(3*4)
+print(4%3)
+print(3/4)
+print(3**4)
+print(4//3)
+
+# Ejercicio 3
+print('Alberto Carlos')
+print('Zuccala')
+print('Argentina')
+print('I am enjoying 30 days of python')
+
+# Ejercicio 4
+print(type(10))
+print(type(9.8))
+print(type(3.14))
+print(type(4 - 4j))
+print(type(['Asabeneh', 'Python', 'Finland']))
+print(type('Your name'))
+print(type('Your family name'))
+print(type('Your country'))
+
+#Ejercicio Level 3
+print(type(1))
+print(type(2.58))
+print(type(2 + 4j))
+print(type('Hola'))
+print(type(True))
+print(type(['a','b','d','y']))
+print(type((400,500,600,700)))
+print(type({'Ana', 'Paula', 55}))
+print(type({'Name': 'Alberto', 'Age': 50, 'Is Married': False, 'Lenguajes': ['Pascal', 'Visual Basic', 'SQL']}))
+
+#Ejercicio Level 4
+print((2-3)**2)
+print((10-8)**2)
