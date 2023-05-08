@@ -128,19 +128,184 @@ last_three = language[3:]
 print(last_three)   # hon
 
 #Invertir una cadena
-saludo = 'Hola, como estas!'
-print(saludo[::-1])
+ejemplo = 'Hola, como estas!'
+print(ejemplo[::-1])
 
 #Saltar caracteres al cortar
 #Es posible omitir caracteres durante el corte pasando el argumento de paso al método de corte.
-language = 'Albertito'
-pto = language[0:10:2]
+ejemplo = 'Albertito'
+pto = ejemplo[0:10:2]
 print(pto) #Abrio
 
 #Métodos de cadena
-#capitalize (): convierte el primer carácter de la cadena en letra mayúscula
-mayusculas = 'esta es una oracion en minusculas'
-print(mayusculas.capitalize())
 
-#count(): devuelve ocurrencias de subcadena en cadena, cuenta(subcadena, inicio=.., final=..). 
+#capitalize (): Convierte el primer carácter de la cadena en letra mayúscula
+ejemplo = 'esta es una oracion en minusculas'
+print(ejemplo.capitalize())
+
+#count(): Devuelve ocurrencias de subcadena en cadena, cuenta(subcadena, inicio=.., final=..). 
 # El inicio es una indexación inicial para contar y el final es el último índice para contar.
+ejemplo = 'thirty days of python'
+print(ejemplo.count('y')) # Cuenta la cantidad de 'y' que hay en el string
+print(ejemplo.count('y', 5, 14)) # Cuenta la cantidad de 'y' en el string pero desde la posicion 5 hasta la 14 
+print(ejemplo.count('0')) 
+
+#endswith(): Comprueba si una cadena termina con un final específico
+ejemplo = 'thirty days of python'
+print(ejemplo.endswith('on'))   # True
+print(ejemplo.endswith('tion')) # False
+
+#expandtabs (): Reemplaza el carácter de tabulación con espacios, 
+# el tamaño de tabulación predeterminado es 8. Toma el argumento de tamaño de tabulación
+ejemplo = 'thirty\tdays\tof\tpython'
+print(ejemplo.expandtabs())   # 'thirty  days    of      python'
+print(ejemplo.expandtabs(10)) # 'thirty    days      of        python'
+
+#find(): Devuelve el índice de la primera aparición de una subcadena, si no se encuentra devuelve -1
+ejemplo = 'thirty days of python'
+print(ejemplo.find('y'))  # 16
+print(ejemplo.find('tho')) # 17
+
+#rfind(): Devuelve el índice de la última aparición de una subcadena, si no se encuentra devuelve -1
+ejemplo = 'treinta días de python'
+print(ejemplo.rfind('y')) # 5
+print (ejemplo.rfind ('th')) # 1
+
+#format (): Formatea la cadena en una salida más agradable
+first_name = 'Alberto'
+last_name = 'Zucca'
+edad = 250
+trabajo = 'ingeniero'
+país = 'Argentina'
+oracion = 'Soy {} {}. Soy un {}. Tengo {} años. Vivo en {}.'.format(first_name, last_name, trabajo, edad, país)
+print(oracion) # Soy Alberto Zucca. tengo 250 años Yo soy un maestro. Yo vivo en Argentina.
+oracion = f'Soy {first_name} {last_name}. Soy un {trabajo}. Tengo {edad} años. Vivo en {país}.'
+print(oracion) # Soy Alberto Zucca. tengo 250 años Yo soy un maestro. Yo vivo en Argentina.
+
+
+#index (): Devuelve el índice más bajo de una subcadena, los argumentos adicionales indican el índice inicial y final 
+# (predeterminado 0 y longitud de cadena - 1). Si no se encuentra la subcadena, genera un valueError.
+ejemplo = 'treinta días de python'
+sub_cadena = 'py'
+print (ejemplo.index (sub_cadena)) # 16
+print (ejemplo.index (sub_cadena, 9)) # 16
+print ()
+
+#rindex(): Devuelve el índice más alto de una subcadena, los argumentos adicionales indican el índice inicial y final
+# (predeterminado 0 y longitud de la cadena - 1)
+ejemplo = 'treinta días de python'
+sub_cadena = 'ei'
+print (ejemplo.rindex (sub_cadena)) # 2
+#print (ejemplo.rindex (sub_cadena, 9)) # error
+print ()
+
+#isalnum(): Comprueba el carácter alfanumérico
+ejemplo = 'TreintaDíasPython'
+print(ejemplo.isalnum()) # Verdadero
+
+ejemplo = '30DíasPython'
+print(ejemplo.isalnum()) # Verdadero
+
+ejemplo = 'treinta días de python'
+print(ejemplo.isalnum()) # Falso, el espacio no es un carácter alfanumérico
+
+ejemplo = 'treinta días de python 2019'
+print(ejemplo.isalnum()) # Falso
+print ()
+
+#isalpha(): Comprueba si todos los elementos de la cadena son caracteres alfabéticos (a-z y A-Z)
+ejemplo = 'treinta días de python'
+print(ejemplo.isalpha()) # Falso, el espacio se excluye una vez más
+ejemplo = 'TreintaDíasPython'
+print(ejemplo.isalpha()) # Verdadero
+ejemplo = '123'
+print(ejemplo.isalpha()) # Falso
+print ()
+
+#isdecimal(): Comprueba si todos los caracteres de una cadena son decimales (0-9)
+ejemplo = 'treinta días de python'
+print(ejemplo.isdecimal()) # Falso
+ejemplo = '123'
+print(ejemplo.isdecimal()) # Verdadero
+print()
+
+#isdigit(): Comprueba si todos los caracteres de una cadena son números (0-9 y algunos otros caracteres Unicode para números)
+ejemplo = 'Treinta'
+print(ejemplo.isdigit()) # Falso
+ejemplo = '30'
+print(ejemplo.isdigit()) # Verdadero
+ejemplo = '\u00BD'
+print(ejemplo.isdigit()) # Falso
+print()
+
+#isnumeric(): Comprueba si todos los caracteres de una cadena son números o están relacionados con números
+#  (al igual que isdigit(), solo acepta más símbolos, como ½)
+ejemplo = '10'
+print(ejemplo.isnumeric()) # Verdadero
+ejemplo = '\u00BD' # ½
+print(ejemplo.isnumeric()) # Verdadero
+ejemplo = '10.5'
+print(ejemplo.isnumeric()) # Falso
+print()
+
+#isidentifier(): Busca un identificador válido; verifica si una cadena es un nombre de variable válido
+ejemplo = '30DíasDePython'
+print(ejemplo.isidentifier()) # Falso, porque comienza con un número
+ejemplo = 'treinta_días_de_python'
+print(ejemplo.isidentifier()) # Verdadero
+print()
+
+
+#join(): Devuelve una cadena concatenada
+ejemplo = ['HTML', 'CSS', 'JavaScript', 'Reaccionar']
+resultado = ' '.join(ejemplo)
+print (resultado) # 'HTML CSS JavaScript Reaccionar'
+print()
+
+tecnología_web = ['HTML', 'CSS', 'JavaScript', 'Reaccionar']
+resultado = '# '.join(tecnología_web)
+print (resultado) # 'HTML# CSS# JavaScript# Reaccionar'
+print()
+
+#strip (): Elimina todos los caracteres dados desde el principio y el final de la cadena
+ejemplo = 'treinta días de pythoonnn'
+print(ejemplo.strip('noth')) # 'reinta días de py'
+print()
+
+
+#replace (): Reemplaza la subcadena con una cadena dada
+ejemplo = 'treinta días de python'
+print(ejemplo.replace('python', 'codificación')) # 'treinta días de codificación'
+print()
+
+
+#split (): Divide la cadena, utilizando la cadena dada o el espacio como separador
+ejemplo = 'treinta días de python'
+print(ejemplo.split()) # ['treinta', 'días', 'de', 'python']
+
+ejemplo = 'treinta, días, de, python'
+print(ejemplo.split(', ')) # ['treinta', 'días', 'de', 'python']
+print()
+
+
+#title (): Devuelve una cadena de título en mayúsculas
+ejemplo = 'treinta días de python'
+print(ejemplo.title()) # Treinta días de Python
+print()
+
+#swapcase (): Convierte todos los caracteres en mayúsculas a minúsculas 
+# y todos los caracteres en minúsculas a caracteres en mayúsculas
+ejemplo = 'treinta días de python'
+print(ejemplo.swapcase()) # TREINTA DÍAS DE PYTHON
+ejemplo = 'Treinta días de Python'
+print(ejemplo.swapcase()) # tREINTA DÍAS DE pYTHON
+print()
+
+#startswith(): Comprueba si la cadena comienza con la cadena especificada
+ejemplo = 'treinta días de python'
+print(ejemplo.startswith('treinta')) # Verdadero
+print()
+
+ejemplo = '30 días de python'
+print(ejemplo.startswith('treinta')) # Falso
+print()
