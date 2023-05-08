@@ -136,3 +136,11 @@ print(saludo[::-1])
 language = 'Albertito'
 pto = language[0:10:2]
 print(pto) #Abrio
+
+#Métodos de cadena
+#capitalize (): convierte el primer carácter de la cadena en letra mayúscula
+mayusculas = 'esta es una oracion en minusculas'
+print(mayusculas.capitalize())
+
+#count(): devuelve ocurrencias de subcadena en cadena, cuenta(subcadena, inicio=.., final=..). 
+# El inicio es una indexación inicial para contar y el final es el último índice para contar.
