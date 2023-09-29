@@ -49,6 +49,6 @@ rae2 = {
 #Sin modificar los dicc originales con ** o |
 print({**rae1, **rae2}) 
 print(rae1 | rae2)
-#Modificado los dicc origianles
+#Modificado los dicc originales
 rae1.update(rae2)
 print(rae1)
