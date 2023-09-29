@@ -4,6 +4,13 @@
 # No podemos usar métodos de agregar, insertar, eliminar en una tupla porque no es modificable (mutable). 
 # A diferencia de list, tuple tiene pocos métodos. Métodos relacionados con las tuplas:
 
-empty_tuple = ()
+#empty_tuple = ()
 # o usando el constructor de tuplas
-empty_tuple = tuple()
+#empty_tuple = tuple() 
+#
+def hola(nombre):
+    print("hola Mundo")
+    print(f"Como estas {nombre}?")
+
+
+hola("Tito")
