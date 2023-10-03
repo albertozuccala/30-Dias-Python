@@ -52,3 +52,10 @@ print(rae1 | rae2)
 #Modificado los dicc originales
 rae1.update(rae2)
 print(rae1)
+
+#Borrar elementos
+#Por su clave con DEL()
+del rae1["bifronte"]
+print(rae1)
+#Por su clave con POP (con extracción)
+
