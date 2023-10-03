@@ -57,5 +57,26 @@ print(rae1)
 #Por su clave con DEL()
 del rae1["bifronte"]
 print(rae1)
-#Por su clave con POP (con extracción)
+#Por su clave con POP (con extracción) podemos extraer un elemento
+rae1.pop("anarcoide")
+print()
+print(rae1)
+#Borrado completo del diccionario
+rae1.clear()
+print(rae1)
 
+#Diccionarios por comprensión
+palabras = ("hola", "como","te","va?","estas", "ahi?")
+dicc_palabras = {palabra: len(palabra) for palabra in palabras}
+print(dicc_palabras)
+
+#También podemos aplicar condiciones a estas comprensiones
+#Sólo mostrar palabras que tengan tamaño de 4
+dicc_palabras = {palabra: len(palabra) for palabra in palabras if len(palabra) == 4}
+print()
+print(dicc_palabras)
+print()
+
+#Sólo mostrar palabras que empiecen por vocal
+dicc_palabras = {palabra: len(palabra) for palabra in palabras if palabra[0] in ("a","e","i","o","u")}
+print(dicc_palabras)
