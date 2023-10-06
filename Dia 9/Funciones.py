@@ -31,3 +31,15 @@ print(construir_cpu( num_cores=8, vendor="AMD", freq=2.7))
 #los argumentos posicionales siempre deben ir antes que los argumentos nominales
 print(construir_cpu("INTEL", num_cores=4, freq=3.1))
 
+
+#Argumentos mutables e inmutables
+valores = [2, 3, 4]
+
+
+def raiz_cuadrada(valores):
+     for i in range(len(valores)):
+          valores[i] **=2
+          return valores
+
+
+print(raiz_cuadrada(valores))
