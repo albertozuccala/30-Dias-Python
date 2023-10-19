@@ -33,13 +33,15 @@ print(construir_cpu("INTEL", num_cores=4, freq=3.1))
 
 
 #Argumentos mutables e inmutables
-valores = [2, 3, 4]
+valores = [6, 5, 4]
 
 
 def raiz_cuadrada(valores):
-     for i in range(len(valores)):
-          valores[i] **=2
-          return valores
+    for i in range(len(valores)):
+        valores[i] **=2
+    return valores
 
-
+#Esta función devuelve la raiz cuadrada de los elementos de la lista valores[] 
+#pero modifica su contenido internamente y no es lo correcto
 print(raiz_cuadrada(valores))
+print(valores)
