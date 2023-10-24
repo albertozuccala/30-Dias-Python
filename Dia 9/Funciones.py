@@ -41,7 +41,39 @@ def raiz_cuadrada(valores):
         valores[i] **=2
     return valores
 
-#Esta función devuelve la raiz cuadrada de los elementos de la lista valores[] 
+#Esta función devuelve la raiz cuadrada de los elementos de la lista valores[]
 #pero modifica su contenido internamente y no es lo correcto
 print(raiz_cuadrada(valores))
 print(valores)
+
+#Parámetros por defecto
+#En el caso de que no se proporcione un valor al argumento en la llamada a la función, el parámetro
+#correspondiente tomará el valor definido por defecto.
+def construir_cpu(vendor, num_cores, freq=2.0):
+    return dict(
+    vendor=vendor,
+    num_cores=num_cores,
+    freq=freq
+    )
+
+#Llamada a la función sin especificar frecuencia de «cpu»
+print(construir_cpu("INTEL",2)) 
+
+#Llamada a la función indicando una frecuencia concreta de «cpu»
+print(construir_cpu("INTEL",2,4.45)) 
+
+#Empaquetar/Desempaquetar argumentos posicionales
+def _sum(*values: int) -> int:
+    print(f'{values = }')
+    result = 0
+    for value in values: # values es una tupla
+        result += value
+    return result
+
+print(_sum(4, 3, 2, 1))
+
+# Desempaquetado: 
+values = (4, 3, 2, 9)
+print(_sum(*values))
+
+#Empaquetar/Desempaquetar argumentos nominales
