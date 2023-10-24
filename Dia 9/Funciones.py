@@ -63,6 +63,8 @@ print(construir_cpu("INTEL",2))
 print(construir_cpu("INTEL",2,4.45)) 
 
 #Empaquetar/Desempaquetar argumentos posicionales
+#Si utilizamos el operador * delante del nombre de un parámetro posicional, estaremos
+#indicando que los argumentos pasados a la función se empaqueten en una tupla.
 def _sum(*values: int) -> int:
     print(f'{values = }')
     result = 0
@@ -77,3 +79,15 @@ values = (4, 3, 2, 9)
 print(_sum(*values))
 
 #Empaquetar/Desempaquetar argumentos nominales
+#Si utilizamos el operador ** delante del nombre de un parámetro nominal, estaremos
+#indicando que los argumentos pasados a la función se empaqueten en un diccionario.
+def mejor_estudiante(**notas: int) -> str:
+    print(f'{notas = }')
+    max_nota = 1
+    for estudiante, nota in notas.items(): # notas es un diccionario
+        if nota > max_nota:
+            max_nota = nota
+            mejor_estudiante = estudiante
+    return mejor_estudiante
+
+print(mejor_estudiante(ana=8, antonio=6, inma=9, javier=7))
