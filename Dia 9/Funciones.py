@@ -105,7 +105,7 @@ print(mejor_estudiante(**notas))
 
 #Argumentos sólo nominales
 #tendremos que incluir un parámetro especial * que delimitará el tipo de parámetros. 
-# Así, todos los parámetros a la derecha del separador estarán obligados a ser nominales  
+# Así, todos los parámetros a la derecha del separador estarán obligados a ser nominales.
 
 
 def sum_potencia(a, b, *, potencia=False):
@@ -118,3 +118,66 @@ print(sum_potencia(3, 4))
 print(sum_potencia(a=3, b=4))
 print(sum_potencia(3, 4, potencia=True))
 #print(sum_potencia(3, 4, True))        #Error porque el ultimo argumento pasado debe ser nominal
+print()
+
+#Argumentos sólo posicionales
+#tendremos que incluir un parámetro especial / que delimitará el tipo de parámetros. 
+#Así, todos los parámetros a la izquierda del delimitador estarán obligados a ser posicionales.
+
+
+def sum_potencia(a, b, /, potencia=False):
+    if potencia:
+        a**= 2
+        b**=2
+    return a+b
+
+
+print(sum_potencia(3, 4))
+print(sum_potencia(3, 4, True))
+print(sum_potencia(3, 4, potencia=True))
+#print(sum_potencia(a=3, b=4))           Error porque los 2 primeros argumentos deben ser posicionales, no nominales
+print()
+
+
+#Fijando argumentos posicionales y nominales
+#Si mezclamos las dos estrategias anteriores podemos forzar a que una función reciba
+#argumentos de un modo concreto.
+
+def sum_potencia(a, b, /, *, potencia=False):
+    if potencia:
+        a**= 2
+        b**=2
+    return a+b
+
+print(sum_potencia(3, 4, potencia=True)) # Único modo posible de llamada
+print()
+
+#Funciones como parámetros
+#Las funciones se pueden utilizar en cualquier contexto de nuestro programa. Son objetos que
+#pueden ser asignados a variables, usados en expresiones, devueltos como valores de retorno
+#o pasados como argumentos a otras funciones.
+
+def success():
+    print('Si!')
+
+print(type(success))   #El tipo es una funcion
+
+def doit(f):
+    f()
+
+print(doit(success))
+print()
+
+#Pasamos, no sólo una función como argumento, sino los valores con los que debe operar
+
+def repeat_please(text, times=1):
+    return text * times
+
+print(type(repeat_please)) #El tipo es una funcion
+
+
+def doit(f, arg1, arg2):
+    return f(arg1, arg2)
+
+print(doit(repeat_please, 'Funciones como parámetros ', 2))
+
