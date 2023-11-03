@@ -91,3 +91,26 @@ def mejor_estudiante(**notas: int) -> str:
     return mejor_estudiante
 
 print(mejor_estudiante(ana=8, antonio=6, inma=9, javier=7))
+
+# Desempaquetado:
+print()
+notas = dict(ana=8, antonio=6, inma=9, javier=7)
+print(mejor_estudiante(**notas))
+
+
+# Convenciones
+#se utiliza args como nombre de parámetro para argumentos posicionales
+#y kwargs como nombre de parámetro para argumentos nominales
+def func(*args, **kwargs):
+
+#Argumentos sólo nominales
+#tendremos que incluir un parámetro especial * que delimitará el tipo de parámetros. 
+# Así, todos los parámetros a la derecha del separador estarán obligados a ser nominales  
+
+def sum_potencia(a, b, *, potencia=False):
+    if potencia:
+        a**= 2
+        b**=2
+    return a+b
+
+print(sum_potencia(3, 4))
