@@ -162,22 +162,22 @@ def success():
 
 print(type(success))   #El tipo es una funcion
 
-def doit(f):
-    f()
+def doit(x):
+    x()
 
 print(doit(success))
 print()
 
 #Pasamos, no sólo una función como argumento, sino los valores con los que debe operar
 
-def repeat_please(text, times=1):
+def repetir(text, times=1):
     return text * times
 
-print(type(repeat_please)) #El tipo es una funcion
+print(type(repetir)) #El tipo es una funcion
 
 
-def doit(f, arg1, arg2):
-    return f(arg1, arg2)
+def doit(a, arg1, arg2):
+    return a(arg1, arg2)
 
-print(doit(repeat_please, 'Funciones como parámetros ', 2))
+print(doit(repetir, 'Funciones como parámetros ', 2))
 
