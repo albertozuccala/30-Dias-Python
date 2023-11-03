@@ -101,11 +101,12 @@ print(mejor_estudiante(**notas))
 # Convenciones
 #se utiliza args como nombre de parámetro para argumentos posicionales
 #y kwargs como nombre de parámetro para argumentos nominales
-def func(*args, **kwargs):
+#def func(*args, **kwargs):
 
 #Argumentos sólo nominales
 #tendremos que incluir un parámetro especial * que delimitará el tipo de parámetros. 
 # Así, todos los parámetros a la derecha del separador estarán obligados a ser nominales  
+
 
 def sum_potencia(a, b, *, potencia=False):
     if potencia:
@@ -114,3 +115,6 @@ def sum_potencia(a, b, *, potencia=False):
     return a+b
 
 print(sum_potencia(3, 4))
+print(sum_potencia(a=3, b=4))
+print(sum_potencia(3, 4, potencia=True))
+#print(sum_potencia(3, 4, True))        #Error porque el ultimo argumento pasado debe ser nominal
